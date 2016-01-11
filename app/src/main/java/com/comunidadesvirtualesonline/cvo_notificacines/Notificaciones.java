@@ -1,6 +1,7 @@
 package com.comunidadesvirtualesonline.cvo_notificacines;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.app.Fragment;
+import com.comunidadesvirtualesonline.cvo_notificacines.gcmquickstart.*;
 
 import com.comunidadesvirtualesonline.cvo_notificacines.fragments.NotificacionesFragment;
 import com.comunidadesvirtualesonline.cvo_notificacines.fragments.usuarios_fragment;
@@ -39,6 +41,7 @@ public class Notificaciones extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Snackbar.make(view, "Envio Mensajes Al Colegio", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -175,6 +178,8 @@ private void setupDrawerContent(NavigationView navigationView){
         } else if (id == R.id.nav_config) {
 
         } else if (id == R.id.nav_cerrar_Sesion) {
+            Intent i = new Intent(this, com.comunidadesvirtualesonline.cvo_notificacines.Main.class);
+            startActivity(i);
 
         }
 
