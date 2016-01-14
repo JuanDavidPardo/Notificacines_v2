@@ -22,6 +22,7 @@
         android:src="@drawable/avatar"
         app:border_color="@color/ImageBorder"
         app:border_width="2dp"
+        android:onClick=""
 
 
 

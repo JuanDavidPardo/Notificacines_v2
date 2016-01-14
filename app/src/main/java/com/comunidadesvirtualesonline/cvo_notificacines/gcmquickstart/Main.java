@@ -33,6 +33,8 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.comunidadesvirtualesonline.cvo_notificacines.gcmquickstart.*;
 
+import com.comunidadesvirtualesonline.cvo_notificacines.Notificaciones;
+
 public class Main extends AppCompatActivity {
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -42,10 +44,31 @@ public class Main extends AppCompatActivity {
     private ProgressBar mRegistrationProgressBar;
     private TextView mInformationTextView;
 
+    public String token ="1234ESTE3TOKEN";
+    public String Servestado1 ="REGISTRADO";
+    public String Servestado2 ="No_Registrado";
+
+
+    public String estado1 ="REGIST";
+    public String estado2 ="No_Registrado";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+
+        if (estado1 == Servestado1){
+
+            Intent i = new Intent(this, com.comunidadesvirtualesonline.cvo_notificacines.Notificaciones.class);
+            startActivity(i);
+
+        }else if (estado2 == Servestado2){
+
+            Intent i = new Intent(this, com.comunidadesvirtualesonline.cvo_notificacines.inicio.class);
+            startActivity(i);
+
+        }
+
 
 
 
@@ -61,6 +84,7 @@ public class Main extends AppCompatActivity {
                         .getBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, false);
                 if (sentToken) {
                     mInformationTextView.setText(getString(R.string.gcm_send_message));
+
                 } else {
                     mInformationTextView.setText(getString(R.string.token_error_message));
                 }

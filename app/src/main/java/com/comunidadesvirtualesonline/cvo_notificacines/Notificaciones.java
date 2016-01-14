@@ -77,6 +77,10 @@ public class Notificaciones extends AppCompatActivity
 
     }
 
+
+
+
+
     /* NO SIRVIO
    private void setToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

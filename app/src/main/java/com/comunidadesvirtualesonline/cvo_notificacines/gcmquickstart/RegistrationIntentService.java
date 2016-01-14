@@ -36,6 +36,7 @@ public class RegistrationIntentService extends IntentService {
     private static final String TAG = "RegIntentService";
     private static final String[] TOPICS = {"global"};
 
+
     public RegistrationIntentService() {
         super(TAG);
     }
@@ -63,6 +64,9 @@ public class RegistrationIntentService extends IntentService {
 
             // Subscribe to topic channels
             subscribeTopics(token);
+            TOKEN(token);
+
+
 
             // You should store a boolean that indicates whether the generated token has been
             // sent to your server. If the boolean is false, send the token to your server,
@@ -106,5 +110,10 @@ public class RegistrationIntentService extends IntentService {
         }
     }
     // [END subscribe_topics]
+
+    public String TOKEN(String token){
+        Log.i(TAG, "Aqui esta el puto token yupo: " + token);
+        return token;
+    }
 
 }
