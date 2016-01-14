@@ -8,6 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         <activity
             android:name=".Notificaciones"
             android:label="@string/app_name"
@@ -107,7 +110,7 @@
         </service>
         <!-- [END instanceId_listener] -->
         <service
-            android:name=".RegistrationIntentService"
+            android:name=".gcmquickstart.QuickstartPreferences$RegistrationIntentService"
             android:exported="false">
         </service>
     </application>

@@ -33,8 +33,6 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.comunidadesvirtualesonline.cvo_notificacines.gcmquickstart.*;
 
-import com.comunidadesvirtualesonline.cvo_notificacines.Notificaciones;
-
 public class Main extends AppCompatActivity {
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
@@ -94,7 +92,7 @@ public class Main extends AppCompatActivity {
 
         if (checkPlayServices()) {
             // Start IntentService to register this application with GCM.
-            Intent intent = new Intent(this, com.comunidadesvirtualesonline.cvo_notificacines.RegistrationIntentService.class);
+            Intent intent = new Intent(this, QuickstartPreferences.RegistrationIntentService.class);
             startService(intent);
         }
     }
